@@ -90,7 +90,7 @@ function validateUserId(req, res, next) {
         req.user = userId;
         next();
       } else {
-        res.status(400).json({ message: 'invalid user id' });
+        res.status(404).json({ message: 'invalid user id' });
       }
     })
     .catch((err) => res.status(500).json({ message: 'error validating id' }));
